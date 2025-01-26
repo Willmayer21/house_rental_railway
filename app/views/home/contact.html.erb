@@ -1,5 +1,13 @@
+<div class="main">
+
+
 <h1>contact</h1>
-<div id="map" style="height: 400px; width: 100%;">
+
+<div class="form">
+  <img src="https://res.cloudinary.com/dinxoqq5s/image/upload/v1737920163/Cap%20Ma/Screenshot_2025-01-26_at_23.35.49_h9x3oy.png" alt="">
+</div>
+
+<div id="map">
 </div>
 
 <script>
@@ -19,9 +27,32 @@
   src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap">
 </script>
 
+
+
+</div>
+
+
 <style>
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(202, 194, 177)
+}
 #map {
-  height: 400px;
+  height: 700px;
   width: 100%;
 }
+
+.form {
+  width: 500px;
+  height: 400px;
+  align-self: center;
+  padding-top: 2rem;
+  /* background-color: blue; */
+}
+
+.form img {
+  width: 100%;
+}
+
 </style>
