@@ -1,1 +1,27 @@
 <h1>contact</h1>
+<div id="map" style="height: 400px; width: 100%;">
+</div>
+
+<script>
+  function initMap() {
+    const location = { lat: -19.982589, lng: 57.610403 }; // Replace with your coordinates
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: location,
+    });
+    new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+</script>
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap">
+</script>
+
+<style>
+#map {
+  height: 400px;
+  width: 100%;
+}
+</style>
