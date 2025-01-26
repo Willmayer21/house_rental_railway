@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def gallery
   end
+
+  def contact
+  end
 end
