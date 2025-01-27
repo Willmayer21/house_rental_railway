@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'gallery', to: 'home#gallery'
   get 'contact', to: 'home#contact'
   get 'test', to: 'home#test'
+  get 'book', to: 'home#book'
 end

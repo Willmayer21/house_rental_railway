@@ -10,4 +10,7 @@ class HomeController < ApplicationController
 
   def test
   end
+
+  def book
+  end
 end

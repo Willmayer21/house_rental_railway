@@ -3,6 +3,16 @@
     <a class="navbar-brand" href="#">
       <img src="https://res.cloudinary.com/dinxoqq5s/image/upload/v1737813962/Cap%20Ma/cropped_circle_white_background_vlzjlp.png" />
     </a>
+
+
+    <div class="button">
+      <%# <h5>Book Now</h5> %>
+      <%= link_to "Book Now", book_path %>
+    </div>
+
+
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,7 +24,7 @@
           <li class="nav-item active menus">
             <%= link_to "Gallery", gallery_path %>
           </li>
-          <li class="nav-item active menus">
+          <li class="nav-item active menus ">
             <%= link_to "Contact", contact_path %>
           </li>
       </ul>
@@ -25,8 +35,31 @@
 
 <style>
 
+.button {
+  display: flex;
+  height: 50px;
+  width: 150px;
+  background-color: red;
+  color: white !important;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px 50px 50px 50px;
+  margin-left: 9rem; /* this centers the red book now button*/
+}
+
+.button h5 {
+  padding: 0.5rem 0 0 0;
+  align-self: center;
+}
+
+.button * {
+  color: white;
+}
+
+
 .navbar-nav .nav-item * {
-  color: black; /* Set text color to black */
+  color: black;
 }
 
 .navbar-lewagon {
@@ -64,5 +97,11 @@
   padding: 0 0 0 1rem;
 }
 
+
+@media all and (max-width: 575px) {
+  .button {
+    margin-left: 0rem; /* this centers the red book now button*/
+  }
+}
 
 </style>
