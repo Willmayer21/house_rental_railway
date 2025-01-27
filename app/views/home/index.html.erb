@@ -63,14 +63,6 @@
       </div>
     </div>
 
-  <div class="calendar-container">
-    <h1>Réservation</h1>
-    <iframe
-      src="https://www.bookingmood.com/embed/cdf71bf1-88f4-47bc-a3ff-fbcc9d410c4a?"
-      style="width:100%;border:none">
-    </iframe>
-    <script src="https://www.bookingmood.com/js/resize.js"></script>
-  </div>
 
 </div>
 
@@ -94,7 +86,7 @@
 }
 
 .promo-text {
-  padding: 5rem 10rem;
+  padding: 5rem 1rem;
   text-align: center;
 }
 
@@ -119,14 +111,6 @@
   height: 100%;
 }
 
-.calendar-container {
-  padding-top: 3rem;
-  text-align: center;
-}
-
-.calendar-container h1 {
-  padding: 1rem 0;
-}
 
 .offer-container {
   padding: 3rem 0 0 0;
@@ -151,5 +135,12 @@
 .el img {
   height: 100px;
   padding: 0 0 1rem 0;
+}
+
+
+@media all and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
 }
 </style>
