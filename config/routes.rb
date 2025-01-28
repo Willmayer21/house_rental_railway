@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'contact', to: 'home#contact'
   get 'test', to: 'home#test'
   get 'book', to: 'home#book'
+  resources :contacts, only: [:new, :create]
 end
