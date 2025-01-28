@@ -88,6 +88,13 @@
 .promo-text {
   padding: 5rem 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-text * {
+  align-self: center;
+  width: 33rem;
 }
 
 .img-text-container {
@@ -142,5 +149,9 @@
   .row {
     flex-direction: column;
   }
+
+  .promo-text * {
+  width: 18rem;
+}
 }
 </style>
