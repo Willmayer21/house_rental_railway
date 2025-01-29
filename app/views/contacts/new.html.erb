@@ -44,6 +44,32 @@
       </div>
     <% end %>
   </div>
+
+
+  <%# google map %>
+  <div id="map" style="height: 500px; width: 100%; margin-top: 3rem;">
+  </div>
+
+  <script>
+    function initMap() {
+      // Define the map center (e.g., New York City)
+      const center = { lat: -19.98260, lng: 57.61040 };
+
+      // Create the map
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: center,
+      });
+
+      // Add a marker
+      new google.maps.Marker({
+        position: center,
+        map: map,
+        title: 'Hello World!',
+      });
+    }
+  </script>
+  <%# google map %>
 </div>
 
 <style>
