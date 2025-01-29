@@ -16,42 +16,60 @@ document.addEventListener('DOMContentLoaded', function () {
   const muteBtn = document.getElementById('muteBtn');
   const videoBox = document.querySelector('.video-box');
 
-  // Play/pause video when the button is clicked
-  playPauseBtn.addEventListener('click', function () {
-    video.play();
-    videoBox.classList.add('playing'); // Hide the button
-  });
-
-  // Pause video when clicking on the video
-  video.addEventListener('click', function () {
-    if (video.paused) {
-      video.play();
-      videoBox.classList.add('playing'); // Hide the button
-    } else {
-      video.pause();
-      videoBox.classList.remove('playing'); // Show the button
-    }
-  });
-
-  // Auto-play fallback
-  video.play().catch(error => {
+  // Ensure the video starts playing on load
+  video.play().then(() => {
+    videoBox.classList.add('playing'); // Hide play button
+  }).catch(error => {
     console.log('Autoplay blocked:', error);
   });
 
-  // Toggle mute/unmute on button click
+  // Play/pause button functionality
+  playPauseBtn.addEventListener('click', function () {
+    if (video.paused) {
+      video.play();
+      videoBox.classList.add('playing');
+      videoBox.classList.remove('paused'); // Hide play button
+    }
+  });
+
+  // Click on video to toggle play/pause
+  video.addEventListener('click', function () {
+    if (video.paused) {
+      video.play();
+      videoBox.classList.add('playing');
+      videoBox.classList.remove('paused'); // Hide play button
+    } else {
+      video.pause();
+      videoBox.classList.add('paused'); // Show play button
+    }
+  });
+
+  // Show play button when video is paused
+  video.addEventListener('pause', function () {
+    videoBox.classList.add('paused');
+  });
+
+  // Hide play button when video starts playing
+  video.addEventListener('play', function () {
+    videoBox.classList.remove('paused');
+  });
+
+  // Mute/unmute functionality
   muteBtn.addEventListener('click', function () {
     video.muted = !video.muted;
     muteBtn.innerHTML = video.muted ? '🔇' : '🔊'; // Change icon
   });
-
 });
 
 
-  </script>
+
+</script>
 
 
 <style>
- /* Video container */
+
+
+/* Video container */
 .video-box {
   position: relative;
   width: 100%;
@@ -88,18 +106,26 @@ video {
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease;
-  padding: 4px 0px 0px 7px;
-  line-height: 50px;
+  padding: 0; /* Ensures no extra spacing */
+  line-height: 0; /* Prevents misalignment */
 }
 
+/* Hide play button on page load (video playing) */
+.video-box.playing #playPauseBtn,
+.video-box #playPauseBtn {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* Show play button only when video is paused */
+.video-box.paused #playPauseBtn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Play button hover effect */
 #playPauseBtn:hover {
   background-color: rgba(0, 0, 0, 0.9);
-}
-
-/* Hide the button when the video is playing */
-.video-box.playing #playPauseBtn {
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* Mute button styling (kept on video) */
@@ -122,9 +148,10 @@ video {
   transition: background 0.3s ease;
 }
 
+/* Mute button hover effect */
 .mute-btn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
 
-  </style>
+</style>
