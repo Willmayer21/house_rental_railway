@@ -4,9 +4,6 @@ class ContactsController < ApplicationController
   end
 
   def create
-    puts "Testing ENV variables:"
-    puts "GMAIL_USERNAME: #{ENV['GMAIL_USERNAME']}"
-    puts "GMAIL_INBOX: #{ENV['GMAIL_INBOX']}"
     @contact = Contact.new(contact_params)
 
     if @contact.valid?
