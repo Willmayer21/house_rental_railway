@@ -67,9 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <style>
-
-
-/* Video container */
+ /* Video container */
 .video-box {
   position: relative;
   width: 100%;
@@ -106,26 +104,18 @@ video {
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease;
-  padding: 0; /* Ensures no extra spacing */
-  line-height: 0; /* Prevents misalignment */
+  padding: 4px 0px 0px 7px;
+  line-height: 50px;
 }
 
-/* Hide play button on page load (video playing) */
-.video-box.playing #playPauseBtn,
-.video-box #playPauseBtn {
-  opacity: 0;
-  pointer-events: none; /* Prevent interaction */
-}
-
-/* Show play button only when video is paused */
-.video-box.paused #playPauseBtn {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Play button hover effect */
 #playPauseBtn:hover {
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Hide the button when the video is playing */
+.video-box.playing #playPauseBtn {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Mute button styling (kept on video) */
@@ -148,10 +138,9 @@ video {
   transition: background 0.3s ease;
 }
 
-/* Mute button hover effect */
 .mute-btn:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
 
-</style>
+  </style>
