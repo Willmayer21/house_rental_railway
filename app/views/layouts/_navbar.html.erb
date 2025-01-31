@@ -1,22 +1,80 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar-custom navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://res.cloudinary.com/dinxoqq5s/image/upload/v1737813962/Cap%20Ma/cropped_circle_white_background_vlzjlp.png" />
+  </a>
+  <div class="my-button">
+    <%= link_to "Book Now", book_path %>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav right-align">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <%= link_to "Gallery", gallery_path %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <%= link_to "Contact", new_contact_path %>
       </li>
     </ul>
   </div>
 </nav>
+
+
+<style>
+
+.navbar-collapse > ul > li {
+  align-self: center;
+  margin-left: 25px;
+}
+
+
+
+li * {
+  padding: 0 0.5rem 0 0;
+  color: black;
+}
+
+.navbar-custom {
+  position: fixed; /* Makes the navbar stay at the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the navbar spans the entire width */
+  z-index: 10; /* Places the navbar above other content */
+  background: rgba(202, 194,177, 1) !important; /* Makes the navbar transparent */
+  padding: 0.1rem 0.5rem;
+  border-radius: 50px 50px 50px 50px;
+  margin-top: 0.5rem;
+  width: 99%;
+}
+
+.navbar-brand img {
+  width: 50px;
+}
+
+.my-button {
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  height: 50px;
+  width: 150px;
+  background-color: red;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.my-button * {
+  color: white !important;
+}
+
+.right-align {
+  margin-left: auto; /* Moves the Contact link to the right */
+}
+</style>
