@@ -1,100 +1,22 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-background-color">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://res.cloudinary.com/dinxoqq5s/image/upload/v1737813962/Cap%20Ma/cropped_circle_white_background_vlzjlp.png" />
-    </a>
-    <div class="button">
-      <%= link_to "Book Now", book_path %>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active menus">
-            <%= link_to "Home", root_path %>
-          </li>
-          <li class="nav-item active menus">
-            <%= link_to "Gallery", gallery_path %>
-          </li>
-          <li class="nav-item active menus ">
-            <%= link_to "Contact", new_contact_path %>
-          </li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
   </div>
-</div>
-
-
-<style>
-
-.button {
-  display: flex;
-  height: 50px;
-  width: 150px;
-  background-color: red;
-  color: white !important;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px 50px 50px 50px;
-  margin-left: 9rem; /* this centers the red book now button*/
-}
-
-.button h5 {
-  padding: 0.5rem 0 0 0;
-  align-self: center;
-}
-
-.button * {
-  color: white;
-}
-
-
-.navbar-nav .nav-item * {
-  color: black;
-}
-
-.navbar-lewagon {
-  position: fixed; /* Makes the navbar stay at the top of the viewport */
-  top: 0;
-  left: 0;
-  width: 100%; /* Ensures the navbar spans the entire width */
-  z-index: 10; /* Places the navbar above other content */
-  background: rgba(202, 194,177, 1); /* Makes the navbar transparent */
-  padding: 0.1rem 1rem;
-  border-radius: 50px 50px 50px 50px;
-  margin-top: 0.5rem;
-  }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 600px;
-}
-
-
-
-.navbar-lewagon .navbar-brand img {
-  /* display: none; Hides the logo */
-  width: 50px;
-}
-
-.navbar-nav {
-  text-align: center;
-}
-
-.menus {
-  padding: 0 0 0 1rem;
-}
-
-
-@media all and (max-width: 575px) {
-  .button {
-    margin-left: 0rem; /* this centers the red book now button*/
-  }
-}
-
-</style>
+</nav>
